@@ -39,7 +39,7 @@ function Product_card(props) {
     <div className="bg-amber-100 rounded-xl w-[300px] shadow-2xl ms-5 my-3 p-4 ">
         
         {/* <h2 style={{textAlign:"center"}}>{props.pro_category} </h2> */}
-            <img src={`http://localhost:2002/product-pics/${props.email}${props?.pro_pic}`} alt=""></img>
+            <img src={`https://g2c-backend-9iwe.onrender.com/product-pics/${props.email}${props?.pro_pic}`} alt=""></img>
             <p>Product Name:- &nbsp;{props.item}</p>
             <p>Product Price / unit :- &nbsp;{props.price}</p>
             <p>Product Quantity :- &nbsp;{props.quantity} {props.units}</p>
