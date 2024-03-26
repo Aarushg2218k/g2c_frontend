@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Signup from './signup';
+import Login from './login';
+import Profile from './Profile';
+import { Avail } from './add-product';
+import Header, { Navbar } from './nav';
+import { Route, Routes } from 'react-router-dom';
+import Manage from './manage_product';
+import Grower from './find_grower';
+import { GDash } from './dash-Grower';
+import { Dash } from './Dashboard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header></Header>
+    {/* <Profile></Profile> */}
+    {/* <Avail></Avail> */}
+    {/* <Manage></Manage> */}
+    {/* <Grower></Grower> */}
+    
+    <Routes>
+      <Route path="/login" element={<Login/>} />
+      <Route path="/signup" element={<Signup/>} />
+      <Route path="/profile-form" element={<Profile/>} />
+      <Route path="/Avail_product" element={<Avail/>} />
+      <Route path="/Manage_product" element={<Manage/>} />
+      <Route path="//dashboard" element={<Dash/>} />
+    </Routes>
+
+    </>
   );
 }
 
