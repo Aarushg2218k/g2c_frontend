@@ -79,7 +79,7 @@ function Manage() {
                                         return (
                                             <tr key={index} className='text-center border-b transition duration-300 ease-in-out border-neutral-50 hover:bg-neutral-600'>
                                                 <td className="py-2 whitespace-nowrap">
-                                                    <img src={`https://g2c-backend-9iwe.onrender.com/product-pics/${obj.email}${product.pro_pic}`}alt="product pic" className="h-20 w-20 mx-auto rounded-md"></img>
+                                                    <img src={`https://g2c-backend-6pje.onrender.com/product-pics/${obj.email}${product.pro_pic}`}alt="product pic" className="h-20 w-20 mx-auto rounded-md"></img>
                                                 </td>
                                                 <td className="py-2 whitespace-nowrap">
                                                     <div className="text-sm text-gray-900">{product.item}</div>

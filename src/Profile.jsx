@@ -76,10 +76,10 @@ export default function Profile() {
     if(data!=null){
       setbtn(true);
       setobj({ ...data });
-      setPrev(`https://g2c-backend-9iwe.onrender.com/profile-pics/${data.email}${data?.ppic}`);
-      console.log(`https://g2c-backend-9iwe.onrender.com/profile-pics/${data.email}${data?.ppic}`);
-      setadhaarPrev(`https://g2c-backend-9iwe.onrender.com/adhaar-pics/${data.email}${data?.adhaar_pic}`);
-      console.log(`https://g2c-backend-9iwe.onrender.com/adhaar-pics/${data.email}${data?.adhaar_pic}`);
+      setPrev(`https://g2c-backend-6pje.onrender.com/profile-pics/${data.email}${data?.ppic}`);
+      console.log(`https://g2c-backend-6pje.onrender.com/profile-pics/${data.email}${data?.ppic}`);
+      setadhaarPrev(`https://g2c-backend-6pje.onrender.com/adhaar-pics/${data.email}${data?.adhaar_pic}`);
+      console.log(`https://g2c-backend-6pje.onrender.com/adhaar-pics/${data.email}${data?.adhaar_pic}`);
     }
   }
   }
