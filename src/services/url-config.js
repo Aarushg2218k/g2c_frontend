@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const baseURL="http://localhost:2002/";
-const baseURL = "https://g2c-backend-9iwe.onrender.com/";
+const baseURL = "https://g2c-backend-9iwe.onrender.com";
 
 const publicAxios=axios.create({baseURL});
 
