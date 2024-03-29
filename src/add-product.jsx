@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { addproduct } from './services/product-controller';
 import { GrGallery } from "react-icons/gr";
+import {Validateaxios} from './services/user-controller'
 export const Avail = () => {
 
   const[product,prodetails]=useState({
@@ -13,6 +14,20 @@ export const Avail = () => {
     units:""
   })
 
+  useEffect(()=>{
+    validationfunction();
+},[])
+
+async function validationfunction(){
+    const serverMsg= await Validateaxios();
+    if(serverMsg.data.status===true){
+      // console.log(serverMsg.data.item.data.email)
+      product.email=serverMsg.data.item.data.email;  
+      console.log(product.email);  
+    }
+    else    
+        alert(JSON.stringify(serverMsg.data.err));
+}
   
   const [prev , setPrev] = useState(null);
   function doPrev(inpFile) {
@@ -67,6 +82,7 @@ export const Avail = () => {
                 name="email"
                 type="email"
                 autocomplete="email"
+                value={product.email}
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 h-9 sm:text-sm sm:leading-6"
                 placeholder="Example@gmail.com"
                 onChange={doupdate}
