@@ -207,7 +207,7 @@ export default function Profile() {
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 h-9 sm:text-sm sm:leading-6"
                 placeholder="Example@gmail.com"
                 onChange={doupdate}
-                autoFocus={true}
+                // autoFocus={true}
                 value={obj.email}
                 onBlur={dosearch}
               />
