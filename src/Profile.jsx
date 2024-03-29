@@ -26,8 +26,6 @@ export default function Profile() {
   async function validationfunction(){
       const serverMsg= await Validateaxios();
       if(serverMsg.data.status===true){
-        // console.log(serverMsg.data.item.data.email)
-        // obj.email=serverMsg.data.item.data.email;  
         setobj({...obj,["email"] : serverMsg.data.item.data.email})
         console.log(obj.email);  
       }

@@ -21,8 +21,7 @@ export const Avail = () => {
 async function validationfunction(){
     const serverMsg= await Validateaxios();
     if(serverMsg.data.status===true){
-      // console.log(serverMsg.data.item.data.email)
-      product.email=serverMsg.data.item.data.email;  
+      prodetails({...product,["email"] : serverMsg.data.item.data.email})
       console.log(product.email);  
     }
     else    
@@ -61,8 +60,8 @@ async function validationfunction(){
 
   return (
     <>
-    <div class="mt-4 mx-20 bg-gray-900 rounded-[6%]  flex items-center justify-center px-5 py-5">
-     <form class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden">
+    <div class="">
+     <form class="bg-gray-100 text-gray-500 shadow-xl w-full overflow-hidden">
        <div class="flex w-full ">
            <div class=" ms-12 w-3/4 py-10 px-5 md:px-10">
            <div class="text-center mb-5 ">
@@ -82,6 +81,7 @@ async function validationfunction(){
                 name="email"
                 type="email"
                 autocomplete="email"
+                readOnly="true"
                 value={product.email}
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 h-9 sm:text-sm sm:leading-6"
                 placeholder="Example@gmail.com"

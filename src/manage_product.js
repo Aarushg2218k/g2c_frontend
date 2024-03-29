@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { manageproduct } from "./services/product-controller";
+import { Validateaxios } from "./services/user-controller";
 function Manage() {
   const [obj, setobj] = useState({
     email: "",
   });
+
+  useEffect(()=>{
+    validationfunction();
+},[])
+
+async function validationfunction(){
+    const serverMsg= await Validateaxios();
+    if(serverMsg.data.status===true){
+      setobj({...obj,["email"] : serverMsg.data.item.data.email})
+      // console.log(product.email);  
+    }
+    else    
+        alert(JSON.stringify(serverMsg.data.err));
+}
+
   const [data, setdata] = useState([]);
 
   function Emlstore(event) {
@@ -20,8 +36,8 @@ function Manage() {
   // }
   return (
     <div>
-      <div class="mx-4 mt-4  bg-gray-900 rounded-[6%]  flex items-center justify-center px-5 py-5">
-        <div class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden">
+      <div class="">
+        <div class="bg-gray-100 text-gray-500 shadow-xl w-full overflow-hidden">
           <div class="flex w-full h-[500px]">
             <div class=" w-full py-10 px-5 md:px-10">
               <div class="text-center mb-5">
@@ -43,6 +59,7 @@ function Manage() {
                       <input
                         type="email"
                         name="email"
+                        value={obj.email}
                         class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                         placeholder="example@gmail.com"
                         onChange={Emlstore}

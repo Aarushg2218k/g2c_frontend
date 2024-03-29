@@ -21,7 +21,8 @@ export const GDash = () => {
         navigate("/Manage_product");
     }
     function logout(){
-        alert("Logout");
+        localStorage.setItem("");
+        navigate("/signup");
     }
 
     useEffect(()=>{

@@ -24,22 +24,10 @@ export const CDash = () => {
         navigate("/Manage_product");
     }
     function logout(){
-        alert("Logout");
+        localStorage.setItem("token"," ");
+        navigate("/signup")
     }
 
-    // async function validationfunction(){
-    //     // const url = "http://localhost:2002/token/validation";
-        
-    //     const serverMsg= await Validateaxios();
-    //     if(serverMsg.data.status===true){
-    //       console.log(serverMsg.data.item);
-    //     //    setData(serverMsg.data.retDoc);
-    //     //    setcategories([...new Set(serverMsg.data.retDoc.map((obj)=>{return(obj.pro_category)}))]);    
-    //     //    setcities([...new Set(serverMsg.data.retDoc.map((obj)=>{return(obj.city)}))]);    
-    //     }
-    //     else    
-    //         alert(JSON.stringify(serverMsg.data.err));
-    // }
   return (
     <div>
 
