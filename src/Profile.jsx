@@ -103,7 +103,7 @@ export default function Profile() {
   return (
     <div>
     <div class="">
-     <form class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden">
+     <form class="bg-gray-100 text-gray-500 shadow-xl w-full overflow-hidden">
        <div class="flex w-full h-[500px]">
            <div class=" w-1/4 bg-indigo-500 py-10 px-10">
            <span className='ms-9 text-white text-[20px]'>Profile Pic</span>
