@@ -21,7 +21,7 @@ export const GDash = () => {
         navigate("/Manage_product");
     }
     function logout(){
-        localStorage.setItem("");
+        localStorage.setItem("token"," ");
         navigate("/signup");
     }
 
