@@ -173,7 +173,7 @@ export default function Profile() {
                     className="ms-5 text-sm text-grey-500
                     file:mr-5 file:py-2 file:px-6
                     file:rounded-full file:border-0
-                    file:text-sm file:font-medium
+                    file:text-sm file:font-medium mb-4
                     file:bg-blue-50 file:text-blue-700
                     hover:file:cursor-pointer hover:file:bg-amber-50
                     hover:file:text-amber-700 text-transparent"
@@ -202,18 +202,20 @@ export default function Profile() {
                 name="email"
                 type="email"
                 autocomplete="email"
-                value={obj.email}
-                // readOnly="true"
+                readOnly="true"
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 h-9 sm:text-sm sm:leading-6"
                 placeholder="Example@gmail.com"
                 onChange={doupdate}
                 autoFocus={true}
-                
+                value={obj.email}
                 onBlur={dosearch}
               />
             </div>
           </div>
-
+            {/* <input
+            type="text"
+            value={obj.email}>
+            </input> */}
           <div class="border-b border-gray-900/10 pb-12">
             <div class="mt-4 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div class="sm:col-span-3">
