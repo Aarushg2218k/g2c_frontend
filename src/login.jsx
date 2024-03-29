@@ -21,8 +21,8 @@ function Login() {
         const doLogin = async()=>{
             var servermsg=await Loginaxios(obj);
             if(servermsg.data.status===true){
-                alert(servermsg.data.usertype);
-                alert(servermsg.data.Jtoken);
+                // alert(servermsg.data.usertype);
+                // alert(servermsg.data.Jtoken);
                 localStorage.setItem("token",servermsg.data.Jtoken);
                 // console.log(localStorage.getItem("token"));
                 navigate("/dashboard")

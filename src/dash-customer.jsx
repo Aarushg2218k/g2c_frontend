@@ -34,7 +34,7 @@ export const CDash = () => {
             <div class="text-center mb-5 mt-8">
                 {/* <RiShieldUserFill size={60} className="mx-auto mb-3 mt-[-6px]"></RiShieldUserFill> */}
                 <h1 class="font-bold text-3xl text-gray-900">
-                 C Dashboard
+                 Wlcome Consumer 
                 </h1>
               </div>
         <div  className='flex mx-3 my-8 mt-20 px-3 ms-3'>
