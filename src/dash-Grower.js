@@ -8,10 +8,7 @@ import { Validateaxios } from './services/user-controller'
 export const GDash = () => {
 
 
-    useEffect(()=>{
-            validationfunction();
-    },[])
-
+    
     const navigate = useNavigate();
 
     function profile(){
@@ -27,15 +24,14 @@ export const GDash = () => {
         alert("Logout");
     }
 
+    useEffect(()=>{
+        validationfunction();
+    },[])
+
     async function validationfunction(){
-        // const url = "http://localhost:2002/token/validation";
-        
         const serverMsg= await Validateaxios();
         if(serverMsg.data.status===true){
-          console.log(serverMsg.data.item);
-        //    setData(serverMsg.data.retDoc);
-        //    setcategories([...new Set(serverMsg.data.retDoc.map((obj)=>{return(obj.pro_category)}))]);    
-        //    setcities([...new Set(serverMsg.data.retDoc.map((obj)=>{return(obj.city)}))]);    
+          console.log(serverMsg.data.item);    
         }
         else    
             alert(JSON.stringify(serverMsg.data.err));

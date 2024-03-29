@@ -1,6 +1,7 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { saveprofile,updateprofile,searchprofile } from './services/profile-controller';
 import { baseURL } from './services/url-config';
+import {Validateaxios} from './services/user-controller'
 export default function Profile() {
 
     const [obj, setobj] = useState({
@@ -17,6 +18,21 @@ export default function Profile() {
     const [btn, setbtn]=useState(false);
     const [prev , setPrev] = useState(null);
     const [adhaarprev , setadhaarPrev] = useState(null);
+
+    useEffect(()=>{
+      validationfunction();
+  },[])
+
+  async function validationfunction(){
+      const serverMsg= await Validateaxios();
+      if(serverMsg.data.status===true){
+        // console.log(serverMsg.data.item.data.email)
+        obj.email=serverMsg.data.item.data.email;  
+        console.log(obj.email);  
+      }
+      else    
+          alert(JSON.stringify(serverMsg.data.err));
+  }
 
   function doPrev(inpFile) {
     const [file] = inpFile.files;
@@ -86,7 +102,7 @@ export default function Profile() {
 
   return (
     <div>
-    <div class="w-[1100px] h-auto mt-4 mx-auto bg-gray-900 rounded-[6%]  flex items-center justify-center px-5 py-5">
+    <div class="">
      <form class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden">
        <div class="flex w-full h-[500px]">
            <div class=" w-1/4 bg-indigo-500 py-10 px-10">
@@ -186,10 +202,13 @@ export default function Profile() {
                 name="email"
                 type="email"
                 autocomplete="email"
+                value={obj.email}
+                // readOnly="true"
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 h-9 sm:text-sm sm:leading-6"
                 placeholder="Example@gmail.com"
                 onChange={doupdate}
                 autoFocus={true}
+                
                 onBlur={dosearch}
               />
             </div>
