@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { RiShieldUserFill } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
-import { Dash } from './Dashboard';
+// import { Dash } from './Dashboard';
 import { Loginaxios } from './services/user-controller';
 
 function Login() {

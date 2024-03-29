@@ -21,12 +21,14 @@ function App() {
     {/* <Grower></Grower> */}
     
     <Routes>
+      {/* <Route path="/"/> */}
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup/>} />
       <Route path="/profile-form" element={<Profile/>} />
       <Route path="/Avail_product" element={<Avail/>} />
       <Route path="/Manage_product" element={<Manage/>} />
-      <Route path="//dashboard" element={<Dash/>} />
+      <Route path="/dashboard" element={<Dash/>} />
+      <Route path="/find_grower" element={<Grower/>} />
     </Routes>
 
     </>
