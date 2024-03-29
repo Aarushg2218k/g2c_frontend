@@ -10,11 +10,15 @@ import Manage from './manage_product';
 import Grower from './find_grower';
 import { GDash } from './dash-Grower';
 import { Dash } from './Dashboard';
+import { useState } from 'react';
 
 function App() {
+
+  const [logedin, setlogedin] = useState(false);
+  
   return (
     <>
-    <Header></Header>
+    <Header logedin={logedin} setlogedin={setlogedin} ></Header>
     {/* <Profile></Profile> */}
     {/* <Avail></Avail> */}
     {/* <Manage></Manage> */}
@@ -22,7 +26,7 @@ function App() {
     
     <Routes>
       {/* <Route path="/"/> */}
-      <Route path="/login" element={<Login/>} />
+      <Route path="/login" element={<Login setlogedin={setlogedin}/>} />
       <Route path="/signup" element={<Signup/>} />
       <Route path="/profile-form" element={<Profile/>} />
       <Route path="/Avail_product" element={<Avail/>} />

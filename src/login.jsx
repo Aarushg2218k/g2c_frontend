@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 // import { Dash } from './Dashboard';
 import { Loginaxios } from './services/user-controller';
 
-function Login() {
- 
+function Login(props) {
+
+    const {setlogedin} = props;
     const navigate=useNavigate()
 
     const [obj,setObj] = useState({
@@ -25,6 +26,7 @@ function Login() {
                 // alert(servermsg.data.Jtoken);
                 localStorage.setItem("token",servermsg.data.Jtoken);
                 // console.log(localStorage.getItem("token"));
+                setlogedin(true);
                 navigate("/dashboard")
             }
             else{

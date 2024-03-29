@@ -24,7 +24,7 @@ export const CDash = () => {
     //     navigate("/Manage_product");
     // }
     function logout(){
-        localStorage.setItem("token"," ");
+        localStorage.removeItem("token");
         navigate("/signup")
     }
 
